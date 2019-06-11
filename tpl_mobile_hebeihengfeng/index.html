@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+    <!--当前页面样式 css-->
+    <link rel="stylesheet" href="src/statics/css/index.css">
+
+    <!--swiper Start-->
+    <!--swiper css-->
+    <link rel="stylesheet" href="node_modules/swiper/dist/css/swiper.min.css">
+    <!--swiper js-->
+    <script src="node_modules/swiper/dist/js/swiper.min.js"></script>
+    <!--swiper End-->
+
+    <!--jquery-->
+    <script src="src/statics/js/jquery-1.10.1.min.js"></script>
+    <!--视频播放器-->
+    <link href="src/statics/css/video-js.min.css" rel="stylesheet">
+    <script src="src/statics/js/video.min.js"></script>
+    <!--适配js-->
+    <script type="text/javascript">
+        //当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，
+
+        //注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。
+
+        //总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+
+        resizeEvt = 'orientationonchange' in window ? 'orientationonchange' : 'resize',
+
+            recalc = function () {
+                var clientWidth = document.documentElement.clientWidth;
+                var docEl = document.documentElement;
+                /*  clientWidth = clientWidth < 640 ? clientWidth : 640;*/
+                docEl.style.fontSize = clientWidth / 640 * 100 + 'px';
+            };
+
+        //绑定浏览器缩放与加载时间
+
+        window.addEventListener(resizeEvt, recalc, false);
+
+        document.addEventListener('DOMContentLoaded', recalc, false);
+
+    </script>
+</head>
+<body>
+<script>
+    window.onload = function () {
+        var mySwiper = new Swiper('#banner', {
+            direction: 'horizontal',
+            autoplay: {
+                disableOnInteraction: false,
+            },
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            }
+        });
+
+        var tabsSwiper = new Swiper('#tabs-container', {
+            speed: 500,
+            autoHeight: true,
+            on: {
+                slideChange: function () {
+                    $(".tabs .active").removeClass('active')
+                    $(".tabs li").eq(tabsSwiper.activeIndex).addClass('active')
+                }
+            }
+        });
+
+        tabsSwiper.slideTo(2);
+        $(".tabs li").on('touchstart mousedown', function (e) {
+//            e.preventDefault()
+            $(".tabs .active").removeClass('active')
+            $(this).addClass('active')
+            tabsSwiper.slideTo($(this).index())
+        })
+        $(".tabs li").click(function (e) {
+//            e.preventDefault()
+        });
+
+        adjustImage()
+    }
+
+    /*动态调整图片大小*/
+    var adjustImage = function () {
+        var objs = document.getElementsByTagName('img');
+        for (var i = 0; i < objs.length; i++) {
+            var img = objs[i];
+            img.style.maxWidth = '100%';
+            img.style.height = 'auto';
+        }
+    }
+</script>
+<!--联系我们-->
+<a target="_blank" href="http://cc6pclzydefay583.mikecrm.com/SeL0PMB"
+   style="position:fixed;z-index:999;right:-0.09rem;bottom: 2.1rem;display: inline-block;width: 20px;border-radius: 5px;color:white;font-size:14px;line-height:17px;background: #2476CE;box-shadow: 0 0 5px #666;word-wrap: break-word;padding: 10px 6px;border: 2px solid white;">测试菜单</a>
+<div class="header">
+    <!--广告-->
+    <div class="header-ad"></div>
+</div>
+<!--轮播图区域-->
+<div class="banner">
+    <div class="swiper-container" id="banner">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="src/statics/images/test_banner_1.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="src/statics/images/test_banner_2.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img src="src/statics/images/test_banner_3.jpg">
+            </div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<!--导航区域-->
+<div class="content">
+    <div class="slideGroup">
+        <div class="tabs">
+            <ul>
+                <li class="tab1 active">
+                    <div class="index_product_pic"></div>
+                    <p class="tabs-cn">测试菜单</p>
+                    <p class="tabs-en">testmenue</p>
+                </li>
+                <li class="tab2">
+                    <div class="index_product_pic"></div>
+                    <p class="tabs-cn">测试菜单</p>
+                    <p class="tabs-en">testmenue</p>
+                </li>
+                <li class="tab3">
+                    <div class="index_product_pic"></div>
+                    <p class="tabs-cn">测试菜单机</p>
+                    <p class="tabs-en">testmenue</p>
+                </li>
+                <li class="tab4">
+                    <div class="index_product_pic"></div>
+                    <p class="tabs-cn">测试菜单</p>
+                    <p class="tabs-en">testmenue</p>
+                </li>
+            </ul>
+        </div>
+        <div id="tabs-container" class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- 公司产品 -->
+                <div class="swiper-slide swiper-slide-active" style="width: 100%">
+                    <div class="content-slide">
+                        <ul class="tabs-container-product">
+                            <li>
+                                <img src="src/statics/images/test_tab_container_product.jpg"/>
+                                <p>偏摆罗源啊是线</p>
+                            </li>
+                            <li>second</li>
+                            <li>third</li>
+                            <li>forth</li>
+                            <li>fifith</li>
+                            <li>first</li>
+                            <li>second</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--解决方案-->
+                <div class="swiper-slide swiper-slide-next" style="width: 100%">
+                    <div class="content-slide">
+                        <ul class="tabs-container-solution">
+                            <li>
+                                <img src="src/statics/images/test_tab_container_product.jpg"/>
+                                <p>偏摆罗源啊是线</p>
+                            </li>
+                            <li>
+                                <img src="src/statics/images/test_tab_container_product.jpg"/>
+                                <p>偏摆罗源啊是线</p>
+                            </li>
+                            <li>third</li>
+                            <li>forth</li>
+                            <li>fifith</li>
+                            <li>first</li>
+                            <li>second</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--产品视频-->
+                <div class="swiper-slide" style="width: 100%">
+                    <div class="content-slide feeder">
+                        <!--<div class="feeder">-->
+                        <!---->
+                        <!--</div>-->
+                        <!--弹出对话框提示用户不支持当前的浏览器-->
+                        <!--[if IE 8]>
+                        <script>
+                            alert("当前浏览器不支持视频播放，请使用其他浏览器打开")
+                        </script>
+                        <![endif]-->
+                        <!--视频-->
+                        <div class="feeder-video">
+                            <div class="feeder-title">
+                                <h2>偏摆送料及食品</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="video-container">
+                                <ul>
+                                    <li>
+                                        <h3>测试测试偏白送礼哦阿吉</h3>
+                                        <video class="video-js vjs-fluid vjs-default-skin vjs-big-play-centered video-style"
+                                               controls preload="none" width="640" height="264"
+                                               poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">
+                                            <source src="https://cloud.video.taobao.com/play/u/3970487338/p/2/e/6/t/3/50195024926.mp4"
+                                                    type="video/mp4">
+                                            <!--<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">-->
+                                            <!--<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">-->
+                                            <p class="vjs-no-js">To view this video please enable JavaScript, and
+                                                consider upgrading to a web browser that <a
+                                                        href="http://videojs.com/html5-video-support/" target="_blank">supports
+                                                    HTML5 video</a></p>
+                                        </video>
+                                    </li>
+                                    <!--<li>-->
+                                    <!--<h3>测试测试偏白送礼哦阿吉</h3>-->
+                                    <!--<video  class="video-js vjs-fluid vjs-default-skin vjs-big-play-centered video-style"  controls preload="none" width="640" height="264" poster="http://vjs.zencdn.net/v/oceans.png" data-setup="{}">-->
+                                    <!--<source src="https://cloud.video.taobao.com/play/u/3970487338/p/2/e/6/t/3/50195024926.mp4" type="video/mp4">-->
+                                    <!--&lt;!&ndash;<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">&ndash;&gt;-->
+                                    <!--<p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a></p>-->
+                                    <!--</video>-->
+                                    <!--</li>-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="feeder-advantage">
+                            <div class="feeder-title">
+                                <h2>选择我们的有事啊</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="feeder-content">
+                                <div class="feeder-container">
+                                    dsfsdfdsfdsfdsfdsfsfasdasdas
+                                    asdasdasdasdasdadas
+                                    asdasdasdasdasdasas
+                                    adadddddddddddddddd
+                                    asdA
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feeder-introduce">
+                            <div class="feeder-title">
+                                <h2>偏摆送料及介绍的的</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="feeder-content">
+                                <div class="feeder-container">
+                                    dsfsdfdsfdsfdsfdsfsfasdasdas
+                                    asdasdasdasdasdadas
+                                    asdasdasdasdasdasas
+                                    adadddddddddddddddd
+                                    asdA
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feeder-answer-qustions">
+                            <div class="feeder-title">
+                                <h2>偏摆送料是范德萨发问答</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="feeder-content">
+                                <div class="feeder-container">
+                                    dsfsdfdsfdsfdsfdsfsfasdasdas
+                                    asdasdasdasdasdadas
+                                    asdasdasdasdasdasas
+                                    adadddddddddddddddd
+                                    asdA
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feeder-maintain">
+                            <div class="feeder-title">
+                                <h2>偏摆送料杨虎</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="feeder-content">
+                                <div class="feeder-container">
+                                    dsfsdfdsfdsfdsfdsfsfasdasdas
+                                    asdasdasdasdasdadas
+                                    asdasdasdasdasdasas
+                                    adadddddddddddddddd
+                                    asdA
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feeder-knowledge">
+                            <div class="feeder-title">
+                                <h2>偏摆送料指定hi</h2><a href="http://www.baidu.com"><h4>更多</h4></a>
+                            </div>
+                            <div class="feeder-content">
+                                <div class="feeder-container">
+                                    dsfsdfdsfdsfdsfdsfsfasdasdas
+                                    asdasdasdasdasdadas
+                                    asdasdasdasdasdasas
+                                    adadddddddddddddddd
+                                    asdA
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--&lt;!&ndash;联系我们&ndash;&gt;-->
+                <!--<div class="swiper-slide" style="width:100%">-->
+                <!--<div class="content-slide">-->
+                <!--test44444444444444444-->
+                <!--4444444444444444444444-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--关于恒丰-->
+                <div class="swiper-slide " style="width: 100%">
+                    <div class="content-slide">
+                        test5555555555555
+                        55555555555555555
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--联系我们-->
+    <div class="contact-us">
+        <div class="contact-us-title">
+            <h2>联系我吗</h2>
+        </div>
+        <div class="contact-us-content">
+            <div class="contact-us-container">
+                dsfsdfdsfdsfdsfdsfsfasdasdas
+                asdasdasdasdasdadas
+                asdasdasdasdasdasas
+                adadddddddddddddddd
+                asdA
+            </div>
+        </div>
+    </div>
+    <!--媒体中心-->
+    <div class="media-center">
+        <div class="media-center-title">
+            <h2>媒体中心</h2>
+        </div>
+        <div class="media-center-content">
+            <div class="media-center-container">
+                dsfsdfdsfdsfdsfdsfsfasdasdas
+                asdasdasdasdasdadas
+                asdasdasdasdasdasas
+                adadddddddddddddddd
+                asdA
+            </div>
+        </div>
+    </div>
+    <!--底部导航-->
+    <div class="bottom-nav-content">
+        <div class="bottom-nav-container">
+            dsfsdfdsfdsfdsfdsfsfasdasdas
+            asdasdasdasdasdadas
+            asdasdasdasdasdasas
+            adadddddddddddddddd
+            asdA
+        </div>
+    </div>
+</div>
+<!--底部菜单区域-->
+<div class="footer">
+    <ul>
+        <li>
+            <a href="tel:4008008666" style="color:#333;display: block;">
+                <img src="src/statics/images/index_footer_phone.png" height="29" width="36"/>
+                <p>菜单</p>
+            </a>
+        </li>
+        <!--底部微信二维码展示区域-->
+        <!-- <li>
+             <div class="footer_wechat">
+                 <div class="footer_wechat_qrcode">
+                     <img src="src/statics/skin_summer/images/test_footer_weichat.png" width="100%" height="100%"/>
+                 </div>
+                 <p>测试菜单</p>
+             </div>
+         </li>-->
+        <li>
+            <a href="" style="color:#333;display: block;">
+                <img src="src/statics/images/index_footer_phone.png"/>
+                <p>测试菜单</p>
+            </a>
+        </li>
+        <li>
+            <a href="" style="color:#333;display: block;">
+                <img src="src/statics/images/index_footer_phone.png"/>
+                <p>测试菜单</p>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

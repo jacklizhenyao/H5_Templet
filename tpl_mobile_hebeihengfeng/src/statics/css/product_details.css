@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-style: normal;
+    font-family: Tahoma, "Microsoft YaHei", Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-size: 0.25rem;
+    color: #333;
+    background: #fafafa;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.clear {
+    clear: both;
+}
+
+input {
+    outline: none;
+}
+
+/*视频区域*/
+.product_details_video {
+    width: 100%;
+    height: auto;
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*margin-top: 10px;*/
+}
+
+/*产品列表内容*/
+.product_details_content {
+    padding-top: 0.2rem;
+    margin: 0 auto;
+    width: 96%;
+    padding-bottom: 1.6rem;
+    /*background-color: #2476CE;*/
+}
+.product_details_cotainer{
+    width: 100%;
+    height: auto;
+    /*background: red;*/
+}
+
+/*标题居中*/
+.product_details_cotainer h1,h2,h3,h4,h5{
+    text-align: center;
+}
+
+/*footer 联系区域*/
+.product_footer_wrap {
+    position: fixed;
+    bottom: 0;
+    background: #fff;
+    height: 1.5rem;
+    width: 100%;
+    border-top: 1px solid #e5e5e5;
+}
+
+.product_footer_wrap .product_footer ul li {
+    float: left;
+    width: 24.6%;
+    text-align: center;
+    font-size: 0.25rem;
+    height: 1.5rem;
+    color: #333;
+    border-right: 1px solid #e5e5e5;
+}
+
+.product_footer .prouduct_tab1 .index_product_footer_pic {
+    background: url(../images/back.png) no-repeat;
+    width: 0.65625rem;
+    height: 0.515625rem;
+    background-size: cover;
+    margin: 0.1875rem 0 0.234375rem 0.421875rem;
+}
+
+.product_footer .prouduct_tab2 .index_product_footer_pic {
+    background: url(../images/product_phone.png) no-repeat;
+    width: 0.65625rem;
+    height: 0.515625rem;
+    background-size: cover;
+    margin: 0.1875rem 0 0.234375rem 0.421875rem;
+}
+
+.product_footer .prouduct_tab3 .index_product_footer_pic {
+    background: url(../images/product_enterprise.png) no-repeat;
+    width: 0.65625rem;
+    height: 0.515625rem;
+    background-size: cover;
+    margin: 0.1875rem 0 0.234375rem 0.421875rem;
+}
+
+.product_footer .prouduct_tab4 .index_product_footer_pic {
+    background: url(../images/product_home.png) no-repeat;
+    width: 0.65625rem;
+    height: 0.515625rem;
+    background-size: cover;
+    margin: 0.1875rem 0 0.234375rem 0.421875rem;
+}

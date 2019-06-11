@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+
+    <!--当前页面样式 css-->
+    <link rel="stylesheet" href="src/statics/css/product.css">
+
+    <!--适配js-->
+    <script type="text/javascript">
+        //当设备的方向变化（设备横向持或纵向持）此事件被触发。绑定此事件时，
+
+        //注意现在当浏览器不支持orientationChange事件的时候我们绑定了resize 事件。
+
+        //总来的来就是监听当然窗口的变化，一旦有变化就需要重新设置根字体的值
+
+        resizeEvt = 'orientationonchange' in window ? 'orientationonchange' : 'resize',
+
+            recalc = function () {
+                var clientWidth = document.documentElement.clientWidth;
+                var docEl = document.documentElement;
+                /*  clientWidth = clientWidth < 640 ? clientWidth : 640;*/
+                docEl.style.fontSize = clientWidth / 640 * 100 + 'px';
+            };
+
+        //绑定浏览器缩放与加载时间
+
+        window.addEventListener(resizeEvt, recalc, false);
+
+        document.addEventListener('DOMContentLoaded', recalc, false);
+
+    </script>
+</head>
+<body>
+<!--窗口加载事件-->
+<!--<script>-->
+<!--window.onload = function () {-->
+
+<!--}-->
+<!--</script>-->
+<!--在线客服-->
+<a target="_blank" href="http://cc6pclzydefay583.mikecrm.com/SeL0PMB"
+   style="position:fixed;z-index:999;right:-0.09rem;bottom: 2.1rem;display: inline-block;width: 20px;border-radius: 5px;color:white;font-size:14px;line-height:17px;background: #2476CE;box-shadow: 0 0 5px #666;word-wrap: break-word;padding: 10px 6px;border: 2px solid white;">测试菜单</a>
+
+<!--banner区域-->
+<div class="banner">
+    <img src="src/statics/images/test_banner_1.jpg"/>
+</div>
+<!--产品列表区域-->
+<div class="product_list">
+    <ul>
+        <li>
+            <div class="product_list_left">
+                <img src="src/statics/images/test_tab_container_product.jpg"/>
+            </div>
+            <div class="product_list_right">
+                <div class="product_list_right_title">寻寻寻寻寻寻寻寻相当大的多多多多多多多多多多多多多</div>
+            </div>
+        </li>
+        <li>
+            <div class="product_list_left">
+                <img src="src/statics/images/test_tab_container_product.jpg"/>
+            </div>
+            <div class="product_list_right">
+                <div class="product_list_right_title">寻寻寻寻寻寻寻寻相当大的多多多多多多多多多多多多多</div>
+            </div>
+        </li>
+        <li>
+            <div class="product_list_left">
+                <img src="src/statics/images/test_tab_container_product.jpg"/>
+            </div>
+            <div class="product_list_right">
+                <div class="product_list_right_title">寻多多多多多多多多多多多多多</div>
+            </div>
+        </li>
+        </li>
+    </ul>
+</div>
+<!--底部菜单区域-->
+<!--<div class="product_footer_wrap">-->
+    <!--<div class="product_footer">-->
+        <!--<ul>-->
+            <!--<a onclick="javascript:history.back();">-->
+            <!--</a>-->
+            <!--<li class="prouduct_tab1"><a onclick="javascript:history.back();">-->
+                <!--<div class="index_product_footer_pic"></div>-->
+            <!--</a><a>返回</a><a>-->
+            <!--</a></li>-->
+            <!--<a>-->
+            <!--</a>-->
+            <!--<li class="prouduct_tab2">-->
+                <!--<div class="index_product_footer_pic"></div>-->
+                <!--<a href="tel:4008008666" style="color:#333;">联系电话</a>-->
+            <!--</li>-->
+            <!--<a href="#">-->
+                <!--<li class="prouduct_tab3">-->
+                    <!--<div class="index_product_footer_pic"></div>-->
+                    <!--<p>企业介绍</p>-->
+                <!--</li>-->
+            <!--</a> <a href="#">-->
+            <!--<li class="prouduct_tab4" style="border-right:none;">-->
+                <!--<div class="index_product_footer_pic"></div>-->
+                <!--<p>首页</p>-->
+            <!--</li>-->
+        <!--</a>-->
+        <!--</ul>-->
+    <!--</div>-->
+<!--</div>-->
+</body>
+</html>

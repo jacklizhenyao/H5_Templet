@@ -1,0 +1,458 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-style: normal;
+    font-family: Tahoma, "Microsoft YaHei", Arial, Roboto, "Droid Sans", "Helvetica Neue", "Droid Sans Fallback", "Heiti SC", sans-self;
+    -webkit-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    font-size: 0.25rem;
+    color: #333;
+    background: #fafafa;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.clear {
+    clear: both;
+}
+
+input {
+    outline: none;
+}
+
+/*设置全局的swiper样式*/
+.swiper-wrapper {
+    width: 100%;
+    /*margin-top: 0.4375rem;*/
+}
+
+.swiper-slide {
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/*头部广告区域*/
+/*.header-ad {*/
+/*width: 6.4rem;*/
+/*height: 1rem;*/
+/*background-color: red;*/
+/*}*/
+
+/*轮播图区域*/
+#banner {
+    /* width: 100%;
+     height:auto;*/
+    /*设计图参考 640*320*/
+    width: 6.4rem;
+    height: 3.0rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#banner img {
+    width: 100%;
+    /*width: 6.4rem;*/
+    /*height: 3.2rem;*/
+    height: auto;
+    max-width: 100%;
+}
+
+/*tab对应的内容区域*/
+.slideGroup {
+    /*background-color: aqua;*/
+    width: 100%;
+    margin: 0 auto;
+    height: auto;
+    overflow: hidden;
+}
+
+/*tabs导航栏区域*/
+.slideGroup .tabs {
+    /*    background-color: bisque;*/
+    height: 1.7rem;
+    border-bottom: 1px solid #d9d9d9;
+    position: relative;
+}
+
+.tabs ul {
+    height: 1.78125rem;
+    padding: inherit;
+    margin: inherit;
+}
+
+.slideGroup .tabs ul li {
+    float: left;
+    width: 25%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.slideGroup .tabs ul li.active {
+    height: 1.7rem;
+    color: #023894;
+    border-bottom: 2px solid #023894;
+}
+
+.slideGroup .tabs ul li.active .tabs-cn {
+    font-weight: 500;
+}
+
+.slideGroup .tabs ul li.active .tabs-en {
+    font-weight: 400;
+}
+
+.tab1 .index_product_pic {
+    background: url(../images/index_tab_product_icon.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab1.active .index_product_pic {
+    background: url(../images/index_tab_product_icon_active.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab2 .index_product_pic {
+    background: url(../images/index_tab_product_icon.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab2.active .index_product_pic {
+    background: url(../images/index_tab_product_icon_active.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab3 .index_product_pic {
+    background: url(../images/index_tab_product_icon.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab3.active .index_product_pic {
+    background: url(../images/index_tab_product_icon_active.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab4 .index_product_pic {
+    background: url(../images/index_tab_product_icon.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tab4.active .index_product_pic {
+    background: url(../images/index_tab_product_icon_active.png) no-repeat;
+    width: 1.0rem;
+    height: 1.0rem;
+    background-size: cover;
+    margin-left: 0.4rem;
+}
+
+.tabs-cn {
+    width: 100%;
+    padding: 0px;
+    display: block;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    font-weight: 400;
+    margin: inherit;
+}
+
+.tabs-en {
+    display: block;
+    height: 0.3rem;
+    line-height: 0.3rem;
+    margin: inherit;
+    font-weight: 300;
+}
+
+#tabs-container {
+    margin-top: 2px;
+    margin-bottom: 1.1rem;
+    /*background: red;*/
+    position: relative;
+    width: 100%;
+    padding-bottom: 0.17rem;
+}
+
+/*产品列表区域*/
+
+.tabs-container-product li {
+    position: relative;
+    /*background-color: #023894;*/
+    display: block;
+    /*兼容不支持flex布局的浏览器 如老版本pad的safari*/
+    float: left;
+    width: 49.6%;
+    height: 3.0rem;
+    font-size: 0.3rem;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+}
+
+.tabs-container-product li img {
+    height: 2rem;
+    width: 100%;
+}
+
+.tabs-container-product li p {
+    height: 1rem;
+    color: #4c4c4c;
+    line-height: 0.9rem;
+}
+
+/*.tabs-container-product li:nth-child(n) {*/
+/*background-color: #007aff;*/
+/*}*/
+
+/*.tabs-container-products li:nth-child(2n) {*/
+/*background-color: #8a6de9;*/
+/*color: #fff;*/
+/*}*/
+
+/*解决方案*/
+.tabs-container-solution {
+    display: flex;
+    flex-wrap: wrap;
+    /*兼容不支持flex布局的浏览器 如老版本pad的safari*/
+    box-sizing: border-box;
+}
+
+.tabs-container-solution li {
+    background-color: #023894;
+    display: block;
+    /*兼容不支持flex布局的浏览器 如老版本pad的safari*/
+    float: left;
+    width: 1.9rem;
+    height: 2.0rem;
+    text-align: center;
+    line-height: 1.9rem;
+    margin-left: 0.17rem;
+    margin-top: 0.17rem;
+    border-radius: 6px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 1px 1px 1px #cccccc;
+}
+
+.tabs-container-solution li img {
+    display: inherit;
+    width: 1.8rem;
+    height: 1.5rem;
+    margin: 0.1rem auto;
+}
+
+.tabs-container-solution li p {
+    display: inherit;
+    color: #4c4c4c;
+    line-height: 0.25rem;
+    /*background-color: #023894;*/
+}
+
+.feeder-title {
+    width: 100%;
+    height: 0.8rem;
+    line-height: 0.8rem;
+    background-color: #023894;
+}
+
+.feeder-title h2 {
+    float: left;
+    width: 70%;
+    text-align: left;
+    color: #ffffff; /*背景色*/
+    /*background-color: red;*/
+    padding-left: 0.1rem;
+}
+
+.feeder-title h4 {
+    width: 25%;
+    float: right;
+    text-align: right;
+    color: #ffffff; /*背景色*/
+    /*background-color: #2B333F;*/
+    padding-right: 0.1rem;
+}
+
+.video-container {
+    width: 100%;
+    height: auto;
+    /*background-color: red;*/
+}
+
+.video-container h3 {
+    text-align: center;
+    margin-top: 0.1rem;
+    margin-bottom: 0.1rem;
+    /*background-color: #2476CE;*/
+}
+.video-style{
+    width: 100%;
+    height: auto;
+}
+
+/*选择我们的优势*/
+.feeder-advantage-content{
+    width: 100%;
+    height: auto;
+}
+.feeder-advantage-container{
+    padding-top: 0.2rem;
+    margin: 0 auto;
+    width: 96%;
+    padding-bottom: 1.6rem;
+}
+/*联系我们*/
+.contact-us .contact-us-title h2{
+    line-height: 0.8rem;
+    background-color: red;
+    text-align: center;
+    color: #ffffff; /*背景色*/
+    width: 100%;
+}
+.contact-us-content{
+    width: 100%;
+    height: auto;
+}
+.contact-us-container{
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+    margin: 0 auto;
+    width: 96%;
+    background-color: #4c4c4c;
+}
+/*媒体中心*/
+.media-center .media-center-title h2{
+    line-height: 0.8rem;
+    background-color: #2476CE;
+    text-align: center;
+    color: #ffffff; /*背景色*/
+    width: 100%;
+}
+.media-center-content{
+    width: 100%;
+    height: auto;
+}
+.media-center-container{
+    margin: 0 auto;
+    width: 96%;
+    padding-top: 0.2rem;
+}
+
+/*bottom-nav 底部导航自定义区域*/
+
+.bottom-nav-content{
+    width: 100%;
+    height: auto;
+}
+.bottom-nav-container{
+    margin: 0 auto;
+    width: 96%;
+    padding-bottom: 1.2rem;
+    padding-top: 0.2rem;
+    background-color: #66A8CC;
+}
+
+/*footer 联系区域*/
+.footer {
+    z-index: 999;
+    height: 1rem;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e5e5e5;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    float: left;
+}
+
+.footer ul li a img {
+    margin-top: 0.05rem;
+    width: 0.6rem;
+    height: 0.45315rem;
+}
+
+.footer ul li a p {
+    /*background-color: #2476CE;*/
+    width: 100%;
+    height: 0.4rem;
+    line-height: 0.4rem;
+}
+
+.footer ul li {
+    float: left;
+    width: 33.33%;
+    font-size: 0.3rem;
+}
+
+/*图片微信二维码区域*/
+/*
+.footer_wechat {
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    height: auto;
+}
+
+.footer_wechat_qrcode  {
+    position: absolute;
+    height: 1.2rem;
+    width: 1.2rem;
+    bottom: -10px;
+    left: 0.45rem;
+    border-radius: 5%;
+    box-shadow: 1px -1px 1px 1px #cccccc;
+}
+
+.footer_wechat p {
+    position: relative;
+    top: 0.56rem;
+    left: 4px;
+}
+*/
